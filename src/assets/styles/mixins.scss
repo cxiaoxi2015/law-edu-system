@@ -1,0 +1,49 @@
+/**
+ * mixins.scss
+ */
+
+@mixin linear-gradient($color1: $headerBgColor, $color2: #08172A, $direction: to right) {
+  background: linear-gradient($direction, $color1, $color2);
+}
+
+@mixin is-card() {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: $borderRadius;
+  box-shadow: 1px 1px 9px 2px #e4e4e4;
+  transition: box-shadow .2s linear;
+  &:hover { box-shadow: 1px 1px 6px 4px #e5e5e5; }
+  .header {
+    padding: 0 20px;
+    span {
+      font-weight: 600;
+      color: #333;
+    }
+  }
+  .content { padding: 10px; }
+  .header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .content {
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+@mixin piaofu() {
+  transition: all .2s linear;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  box-shadow: none;
+  &:hover {
+    border: 1px solid transparent;
+    top: -1px;
+    box-shadow: 1px 1px 9px 2px #e4e4e4;
+  }
+}

@@ -1,0 +1,22 @@
+// layout
+$layoutBgColor: #3e98f9;
+$headerBgColor: #08172C;
+$headerTextColor: #fff;
+$sbBgColor: linear-gradient(90deg, #12223B, #071321);
+$sbmActiveBgColor: #F0F8FF;
+$containerBgColor: #F0F8FF;
+
+// content
+$borderRadius: 4px;
+$defaultTextColor: #fff;
+$primaryColor: #1665D8;
+$fontColor: #1665D8;
+$borderColor: #09446E;
+$primaryButtonColor: #243c65;
+$primaryButtonHoverColor: #091A2E;
+
+:export {
+  menuBgColor: $sbBgColor;
+  menuActiveBgColor: $sbmActiveBgColor;
+  defaultTextColor: $defaultTextColor;
+}

@@ -1,0 +1,63 @@
+/**
+ * elementUI样式覆盖
+ */
+
+.el-button {
+  &.el-button--primary {
+    background-color: $primaryButtonColor;
+    border-color: $primaryButtonColor;
+    &:focus,
+    &:hover {
+      background: $primaryButtonHoverColor;
+    }
+  }
+  &.el-button--default {
+    &:focus,
+    &:hover {
+      color: #243C65;
+    }
+  }
+  &.el-button--medium {
+    padding: 0 20px;
+    height: 35px;
+    line-height: 35px;
+  }
+  &.el-button--small {
+    padding: 0 15px;
+    height: 28px;
+    line-height: 28px;
+  }
+}
+
+.el-input__inner {
+  height: 35px;
+  line-height: 35px;
+}
+.el-select,
+.el-input {
+  &.is-focus {
+    .el-input__inner {
+      border-color: $primaryButtonHoverColor !important;
+    }
+  }
+  &:focus {
+    border-color: $primaryButtonHoverColor !important;
+  }
+}
+.el-input.is-active .el-input__inner, .el-input__inner:focus {
+  border-color: $primaryButtonHoverColor !important;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: $primaryButtonHoverColor;
+}
+.el-date-editor .el-range-separator {
+  padding: 0;
+}
+.el-range-editor {
+  .el-input__icon {
+    line-height: 30px;
+  }
+  .el-range-separator {
+    line-height: 28px;
+  }
+}

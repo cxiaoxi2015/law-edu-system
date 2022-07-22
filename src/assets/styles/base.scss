@@ -1,0 +1,18 @@
+/**
+ * base.scss
+ */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Noto Sans SC, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif !important;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
