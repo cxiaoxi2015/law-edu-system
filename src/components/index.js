@@ -2,13 +2,13 @@ import Vue from 'vue'
 
 import TableContainer from './TableContainer';
 import Pagination from './Pagination';
-import XWButton from './XWButton';
-import XWDialog from './XWDialog';
+import LawButton from './LawButton';
+import LawDialog from './LawDialog';
 const install = function(Vue) {
   Vue.component('TableContainer', TableContainer)
   Vue.component('Pagination', Pagination)
-  Vue.component('XWButton', XWButton)
-  Vue.component('XWDialog', XWDialog)
+  Vue.component('LawButton', LawButton)
+  Vue.component('LawDialog', LawDialog)
 }
 
 Vue.use(install)

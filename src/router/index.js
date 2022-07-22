@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import {defaultRoutes} from '@/config/router.config'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(Router)
 
@@ -19,7 +21,7 @@ Router.prototype.goPush = function(route) {
   })
 }
 
-export default new Router({
+const router = new Router({
   mode: 'hash',
   base: process.env.BASE_URL,
   scrollBehavior: (to, from, savedPosition) => {
@@ -31,3 +33,14 @@ export default new Router({
   },
   routes: defaultRoutes
 })
+
+router.beforeEach((to, from, next) => {
+  NProgress.done().start()
+  next()
+})
+
+router.afterEach(route => {
+  NProgress.done()
+})
+
+export default router

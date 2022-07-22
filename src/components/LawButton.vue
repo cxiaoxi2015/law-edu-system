@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'XWButton',
+  name: 'LawButton',
   mixins: [],
   components: {},
   props: {

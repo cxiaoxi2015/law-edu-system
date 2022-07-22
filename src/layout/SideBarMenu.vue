@@ -1,18 +1,30 @@
 <!-- 布局-侧边菜单 -->
 <template>
-  <el-menu
-    class="side-bar-menu"
-    router
-    unique-opened
-    :default-active="defaultActive"
-    :collapse="isCollapse">
-    <SubNavbarItem v-for="item in menuList" :key="item.name" :item="item"></SubNavbarItem>
-  </el-menu>
+  <div class="side-bar-menu__wrap">
+    <div class="logo">
+      <span class="title" :class="{'is-collapse': isCollapse}">{{ title }}</span>
+    </div>
+    <el-menu
+      class="side-bar-menu"
+      router
+      unique-opened
+      :default-active="defaultActive"
+      :collapse="isCollapse">
+      <SubNavbarItem
+        :collapse="isCollapse"
+        v-for="item in menuList"
+        :key="item.name"
+        :item="item" />
+    </el-menu>
+  </div>
 </template>
 
 <script>
 import SubNavbarItem from './SubNavbarItem';
 import { menuList } from '@/mock/menu';
+import { sysTitle, sysCollapseTitle } from '@/config/sysConfig'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'SideBarMenu',
   mixins: [],
@@ -21,15 +33,28 @@ export default {
   },
   data() {
     return {
-      isCollapse: false,
       defaultActive: ''
     }
   },
-  methods: {},
+  methods: {
+
+  },
   computed: {
     menuList() {
       return menuList
-    }
+    },
+    sysTitle() {
+      return sysTitle
+    },
+    sysCollapseTitle() {
+      return sysCollapseTitle
+    },
+    title() {
+      return this.isCollapse
+          ? sysCollapseTitle
+          : sysTitle
+    },
+    ...mapGetters(['isCollapse'])
   },
   watch: {
     '$route': {
@@ -47,19 +72,54 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/styles/mixins.scss";
+.side-bar-menu__wrap {
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  width: 100%;
+  height: 64px;
+  background: #002140;
+  line-height: 64px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFF;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 20px #fff;
+  -webkit-animation: logoTwinkle 1.5s alternate infinite;
+  animation: logoTwinkle 1.5s alternate infinite;
+  @keyframes logoTwinkle {
+    0%{
+      text-shadow: 0 0 10px #FFF;
+    }50%{
+       text-shadow: 0 0 20px #FFF;
+     }100%{
+        text-shadow: 0 0 0 #FFF;
+      }
+  }
+  .title {
+    font-size: 20px;
+    &.is-collapse {
+      font-size: 22px;
+    }
+  }
+}
+.side-bar-menu:not(.el-menu--collapse) {
+  width: 200px;
+}
 .side-bar-menu {
-  width: 230px;
-  height: 100%;
+  flex: 1;
   border-right: none;
   border-right: 1px solid $borderColor;
-  color: $defaultTextColor;
-  @include linear-gradient(#12223B, #071321, 220deg);
+  color: $sideBarDefaultTextColor;
+  background: $sideBarBgColor;
   :deep(.el-menu-item),
   :deep(.el-submenu__title) {
-    color: $defaultTextColor;
+    color: $sideBarDefaultTextColor;
     background-color: transparent;
-    i { color: $defaultTextColor; }
-    &:hover { background-color: #091525 !important; }
+    i { color: $sideBarDefaultTextColor; }
+    &:hover { background-color: #515A6E !important; }
   }
   :deep(.el-submenu__title) {
     &:hover {
@@ -78,7 +138,7 @@ export default {
       border-bottom: 1px solid $sbmActiveBgColor;
       i,
       span {
-        color: $layoutBgColor !important;
+        color: #fff !important;
       }
     }
   }

@@ -35,8 +35,8 @@
         </el-form>
       </template>
       <template v-slot:headerRight>
-        <XW-button type="primary" @click="handleAdd">新增</XW-button>
-        <XW-button type="primary">批量删除</XW-button>
+        <Law-button type="primary" @click="handleAdd">新增</Law-button>
+        <Law-button type="primary">批量删除</Law-button>
       </template>
       <template v-slot:table>
         <el-table :data="tableData" stripe border height="100%">
@@ -90,10 +90,10 @@
             align="center"
             fixed="right">
             <template #default="{ row }">
-              <XW-button type="primary" size="small" @click="">禁用</XW-button>
-              <XW-button type="primary" size="small" @click="handleEdit(row)">编辑</XW-button>
-              <XW-button type="primary" size="small" @click="handleView(row)">查看</XW-button>
-              <XW-button type="primary" size="small" @click="handleDelete(row)">删除</XW-button>
+              <Law-button type="primary" size="small" @click="">禁用</Law-button>
+              <Law-button type="primary" size="small" @click="handleEdit(row)">编辑</Law-button>
+              <Law-button type="primary" size="small" @click="handleView(row)">查看</Law-button>
+              <Law-button type="primary" size="small" @click="handleDelete(row)">删除</Law-button>
             </template>
           </el-table-column>
         </el-table>
@@ -110,7 +110,7 @@
     </TableContainer>
 
     <!-- 新增/编辑 -->
-    <XW-dialog
+    <LawDialog
       :title="dialogTitle"
       :visible.sync="visible.dialogVisible"
       :loading="loading.saving"
@@ -141,10 +141,10 @@
         </el-form-item>
 
       </el-form>
-    </XW-dialog>
+    </LawDialog>
 
     <!-- 查看 -->
-    <XW-dialog
+    <LawDialog
       title="查看"
       :visible.sync="visible.viewData"
       :show-footer="false">
@@ -170,7 +170,7 @@
           <div class="value">{{ dialogForm.operatorTime }}</div>
         </div>
       </div>
-    </XW-dialog>
+    </LawDialog>
   </div>
 </template>
 

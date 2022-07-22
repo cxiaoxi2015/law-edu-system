@@ -4,16 +4,18 @@
     <div class="action-header">
       <div class="header__wrap">
         <slot name="headerLeft"></slot>
-        <XW-button type="primary" @click="handleSearch">查询</XW-button>
-        <XW-button @click="handleReset">重置</XW-button>
+        <Law-button type="primary" @click="handleSearch">查询</Law-button>
+        <Law-button @click="handleReset">重置</Law-button>
       </div>
       <div class="header__wrap">
         <slot name="headerRight"></slot>
       </div>
     </div>
+    <el-divider />
     <div class="table-wrap">
       <slot name="table"></slot>
     </div>
+    <el-divider />
     <slot name="pagination" />
   </div>
 </template>
@@ -54,7 +56,6 @@ export default {
   .action-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
     .header__wrap {
       display: flex;
       align-items: center;

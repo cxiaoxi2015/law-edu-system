@@ -9,7 +9,6 @@
   height: 100%;
   .app-content {
     display: flex;
-    flex-direction: column;
     height: 100%;
   }
 }

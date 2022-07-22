@@ -7,6 +7,7 @@
       @reset="handleReset">
       <template v-slot:headerLeft>
         <el-form
+          class="law-form"
           :model="searchBy"
           inline
           @submit.native.prevent
@@ -34,15 +35,15 @@
         </el-form>
       </template>
       <template v-slot:headerRight>
-        <XW-button type="primary" @click="seniorSearch">高级检索</XW-button>
-        <XW-button type="primary" @click="handleAdd">新增</XW-button>
-        <XW-button type="primary">模板下载</XW-button>
-        <XW-button type="primary">导入</XW-button>
-        <XW-button type="primary">启用</XW-button>
-        <XW-button type="primary">导出</XW-button>
+        <Law-button type="primary" @click="seniorSearch">高级检索</Law-button>
+        <Law-button type="primary" @click="handleAdd">新增</Law-button>
+        <Law-button type="primary">模板下载</Law-button>
+        <Law-button type="primary">导入</Law-button>
+        <Law-button type="primary">启用</Law-button>
+        <Law-button type="primary">导出</Law-button>
       </template>
       <template v-slot:table>
-        <el-table :data="tableData" stripe border height="100%">
+        <el-table class="law-table" :data="tableData" stripe border height="100%">
           <el-table-column
             type="selection"
             width="60"
@@ -127,10 +128,10 @@
             align="center"
             fixed="right">
             <template #default="{ row }">
-              <XW-button type="primary" size="small" @click="">启用</XW-button>
-              <XW-button type="primary" size="small" @click="handleEdit(row)">编辑</XW-button>
-              <XW-button type="primary" size="small" @click="handleView(row)">查看</XW-button>
-              <XW-button type="primary" size="small" @click="handleDelete(row)">删除</XW-button>
+              <Law-button type="primary" size="small" @click="">启用</Law-button>
+              <Law-button type="primary" size="small" @click="handleEdit(row)">编辑</Law-button>
+              <Law-button type="primary" size="small" @click="handleView(row)">查看</Law-button>
+              <Law-button type="primary" size="small" @click="handleDelete(row)">删除</Law-button>
             </template>
           </el-table-column>
         </el-table>
@@ -148,7 +149,7 @@
 
 
     <!-- 新增 -->
-    <XW-dialog
+    <LawDialog
       title="新增"
       :visible.sync="visible.dialogAddVisible"
       :loading="loading.saving"
@@ -188,18 +189,18 @@
         <el-button @click="">暂存</el-button>
         <el-button type="primary" @click="nextClick()">下一步</el-button>
       </div>
-    </XW-dialog>
+    </LawDialog>
 
     <!--  高级检索  -->
-    <XW-dialog
+    <LawDialog
       width="50%"
       title="高级检索"
       :visible.sync="visible.dialogSeniorSearchVisible"
       :loading="loading.saving">
 
-    </XW-dialog>
+    </LawDialog>
     <!-- 编辑/查看 -->
-    <XW-dialog
+    <LawDialog
       width="50%"
       :title="dialogTitle"
       :visible.sync="visible.dialogVisible"
@@ -296,7 +297,7 @@
           </div>
         </div>
       </el-form>
-    </XW-dialog>
+    </LawDialog>
 
   </div>
 </template>

@@ -41,7 +41,7 @@
         </el-form>
       </template>
       <template v-slot:headerRight>
-        <XW-button type="primary">导出</XW-button>
+        <Law-button type="primary">导出</Law-button>
       </template>
       <template v-slot:table>
         <el-table :data="tableData" stripe border height="100%">
@@ -114,8 +114,8 @@
             align="center"
             fixed="right">
             <template #default="{ row }">
-              <XW-button type="primary" size="small" @click="">已查阅</XW-button>
-              <XW-button type="primary" size="small" @click="handleDelete(row)">删除</XW-button>
+              <Law-button type="primary" size="small" @click="">已查阅</Law-button>
+              <Law-button type="primary" size="small" @click="handleDelete(row)">删除</Law-button>
             </template>
           </el-table-column>
         </el-table>
@@ -132,7 +132,7 @@
     </TableContainer>
 
     <!-- 新增/编辑 -->
-    <XW-dialog
+    <Law-dialog
       :title="dialogTitle"
       :visible.sync="visible.dialogVisible"
       :loading="loading.saving"
@@ -168,10 +168,10 @@
             :maxlength="100"></el-input>
         </el-form-item>
       </el-form>
-    </XW-dialog>
+    </Law-dialog>
 
     <!-- 查看 -->
-    <XW-dialog
+    <Law-dialog
       title="查看"
       :visible.sync="visible.viewData"
       :show-footer="false">
@@ -193,7 +193,7 @@
           <div class="value">{{ dialogForm.factor }}</div>
         </div>
       </div>
-    </XW-dialog>
+    </Law-dialog>
   </div>
 </template>
 

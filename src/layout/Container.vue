@@ -25,7 +25,7 @@ export default {
 .container {
   flex: 1;
   overflow-y: auto;
-  padding: 20px;
+  padding: 10px;
   & > div {
     height: 100%;
   }

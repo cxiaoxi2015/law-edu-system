@@ -34,7 +34,7 @@
         </el-form>
       </template>
       <template v-slot:headerRight>
-        <XW-button type="primary">批量删除</XW-button>
+        <Law-button type="primary">批量删除</Law-button>
       </template>
       <template v-slot:table>
         <el-table :data="tableData" stripe border height="100%">
@@ -76,7 +76,7 @@
             width="230"
             align="center">
             <template #default="{ row }">
-              <XW-button type="primary" size="small" @click="handleDelete(row)">删除</XW-button>
+              <Law-button type="primary" size="small" @click="handleDelete(row)">删除</Law-button>
             </template>
           </el-table-column>
         </el-table>
@@ -93,7 +93,7 @@
     </TableContainer>
 
     <!-- 新增/编辑 -->
-    <XW-dialog
+    <LawDialog
       :title="dialogTitle"
       :visible.sync="visible.dialogVisible"
       :loading="loading.saving"
@@ -129,10 +129,10 @@
             :maxlength="100"></el-input>
         </el-form-item>
       </el-form>
-    </XW-dialog>
+    </LawDialog>
 
     <!-- 查看 -->
-    <XW-dialog
+    <LawDialog
       title="查看"
       :visible.sync="visible.viewData"
       :show-footer="false">
@@ -154,7 +154,7 @@
           <div class="value">{{ dialogForm.factor }}</div>
         </div>
       </div>
-    </XW-dialog>
+    </LawDialog>
   </div>
 </template>
 

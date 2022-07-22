@@ -5,7 +5,7 @@
     :visible.sync="dialogVisible"
     :width="width"
     :before-close="beforeClose"
-    custom-class="xw-dialog"
+    custom-class="law-dialog"
     append-to-body
     :close-on-click-modal="false"
     @open="$emit('oepn')"
@@ -15,8 +15,8 @@
     <slot></slot>
     <span slot="footer" class="dialog-footer" v-if="showFooter">
       <slot name="footer">
-        <XW-button type="primary" :loading="loading" @click="handleConfirm">确认</XW-button>
-        <XW-button @click="handleCancel">取消</XW-button>
+        <law-button type="primary" :loading="loading" @click="handleConfirm">确认</law-button>
+        <law-button @click="handleCancel">取消</law-button>
       </slot>
     </span>
   </el-dialog>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'ADCDialog',
+  name: 'LawDialog',
   props: {
     title: {
       type: String,
@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss">
-.xw-dialog {
+.law-dialog {
   .el-dialog__header {
     border-bottom: 1px solid $borderColor;
     padding: 10px 20px;

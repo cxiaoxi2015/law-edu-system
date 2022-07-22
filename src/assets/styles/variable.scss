@@ -1,19 +1,25 @@
 // layout
 $layoutBgColor: #3e98f9;
 $headerBgColor: #08172C;
-$headerTextColor: #fff;
+$headerTextColor: #000;
 $sbBgColor: linear-gradient(90deg, #12223B, #071321);
-$sbmActiveBgColor: #F0F8FF;
-$containerBgColor: #F0F8FF;
+$sbmActiveBgColor: rgba(255, 255, 255, 0.9);
+$containerBgColor: #F4F7F9;
+$sideBarBgColor: #001429;
 
 // content
+$sideBarDefaultTextColor: #fff;
 $borderRadius: 4px;
-$defaultTextColor: #fff;
+$defaultTextColor: #515a6e;
 $primaryColor: #1665D8;
 $fontColor: #1665D8;
 $borderColor: #09446E;
-$primaryButtonColor: #243c65;
-$primaryButtonHoverColor: #091A2E;
+$primaryButtonColor: #001529;
+$primaryButtonHoverColor: #334454;
+$warningButtonColor: #ffad33;
+$warningButtonHoverColor: #ffad33;
+$errorButtonColor: #ed4014;
+$errorButtonHoverColor: #f16643;
 
 :export {
   menuBgColor: $sbBgColor;

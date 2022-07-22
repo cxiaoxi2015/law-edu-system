@@ -4,9 +4,9 @@
  */
 
 const sysTitle = '法学实践教学平台';
-const sysSubTitle = '';
+const sysCollapseTitle = '法';
 
 module.exports = {
   sysTitle,
-  sysSubTitle
+  sysCollapseTitle
 }

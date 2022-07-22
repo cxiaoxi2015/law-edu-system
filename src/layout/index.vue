@@ -1,24 +1,24 @@
 <!-- layout -->
 <template>
   <div class="layout">
-    <XWHeader />
+    <LawSideBarMenu />
     <div class="layout__wrap">
-      <XWSideBarMenu />
+      <LawHeader />
       <Container />
     </div>
   </div>
 </template>
 
 <script>
-import XWHeader from './Header'
-import XWSideBarMenu from './SideBarMenu'
+import LawHeader from './Header'
+import LawSideBarMenu from './SideBarMenu'
 import Container from './Container'
 export default {
   name: 'Layout',
   mixins: [],
   components: {
-    XWHeader,
-    XWSideBarMenu,
+    LawHeader,
+    LawSideBarMenu,
     Container
   },
   data() {
@@ -37,6 +37,7 @@ export default {
   background: $containerBgColor;
   .layout__wrap {
     display: flex;
+    flex-direction: column;
     flex: 1;
     overflow: hidden;
   }
